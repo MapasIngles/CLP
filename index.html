@@ -425,107 +425,7 @@ section { position: relative; }
 .plans-close { text-align: center; max-width: 620px; margin: 46px auto 0; }
 .plans-close p { font-family: var(--font-display); font-weight: 500; color: var(--navy); font-size: clamp(19px,2.4vw,24px); line-height: 1.35; }
 .plans-close p + p { color: var(--muted); font-weight: 400; font-size: 18px; margin-top: 8px; }
-body.upgrade-open { overflow: hidden; }
-.upgrade-modal[hidden] { display: none; }
-.upgrade-modal {
-  position: fixed; inset: 0; z-index: 1200; display: grid; place-items: center;
-  padding: clamp(18px, 3vw, 34px); background: rgba(8,37,48,.72);
-  backdrop-filter: blur(8px); overflow-y: auto;
-}
-.upgrade-modal__dialog { width: min(100%, 720px); color: var(--navy); outline: none; }
-.upgrade-modal__notice {
-  background: linear-gradient(135deg, rgba(241,247,248,.98), rgba(224,236,238,.97));
-  border: 1.5px solid rgba(197,148,55,.75); border-radius: var(--r);
-  padding: 14px 20px; text-align: center; box-shadow: var(--sh);
-}
-.upgrade-modal__notice strong {
-  display: block; font-family: var(--font-display); font-size: clamp(18px, 2.7vw, 23px);
-  line-height: 1.2; color: var(--navy); margin-bottom: 4px;
-}
-.upgrade-modal__notice span { color: var(--muted); font-size: 15px; }
-.upgrade-modal__notice b { color: var(--coral-deep); }
-.upgrade-modal__card {
-  margin-top: 12px; background: var(--paper); border-radius: var(--r-lg);
-  border: 2px solid rgba(197,148,55,.78); box-shadow: var(--sh-lg);
-  padding: clamp(22px, 3vw, 30px); position: relative; overflow: hidden;
-}
-.upgrade-modal__card::before {
-  content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at 14% 0%, rgba(197,148,55,.2), transparent 34%),
-              radial-gradient(circle at 88% 14%, rgba(8,127,140,.14), transparent 30%);
-  pointer-events: none;
-}
-.upgrade-modal__top,
-.upgrade-modal__content,
-.upgrade-modal__price,
-.upgrade-modal__actions { position: relative; z-index: 1; }
-.upgrade-modal__top { padding-right: 40px; display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-bottom: 12px; }
-.upgrade-modal__eyebrow,
-.upgrade-modal__best {
-  font-family: var(--font-display); font-weight: 700; letter-spacing: .06em;
-  text-transform: uppercase; font-size: 12px;
-}
-.upgrade-modal__eyebrow { color: var(--gold-deep); }
-.upgrade-modal__best {
-  background: var(--green); color: #fff; border-radius: var(--pill);
-  padding: 8px 15px; box-shadow: 0 12px 22px -12px var(--green-glow);
-}
-.upgrade-modal h3 { font-size: clamp(24px, 3vw, 32px); line-height: 1.12; color: var(--navy); margin-bottom: 9px; }
-.upgrade-modal__lead { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
-.upgrade-modal__grid {
-  display: grid; grid-template-columns: 1fr .72fr; gap: clamp(18px, 3vw, 28px);
-  align-items: center;
-}
-.upgrade-modal__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
-.upgrade-modal__list li {
-  display: flex; gap: 10px; align-items: flex-start; color: var(--navy);
-  font-weight: 600; font-size: 14.5px; line-height: 1.32;
-}
-.upgrade-modal__list .check {
-  flex: 0 0 22px; width: 22px; height: 22px; border-radius: 50%;
-  display: grid; place-items: center; background: var(--green); color: #fff;
-  font-size: 14px; line-height: 1; margin-top: 1px;
-}
-.upgrade-modal__plus {
-  margin-top: 12px; padding: 10px 12px; border-radius: var(--r-sm);
-  background: rgba(197,148,55,.14); color: var(--gold-deep);
-  font-family: var(--font-display); font-weight: 700; text-align: center;
-}
-.upgrade-modal__price {
-  background: var(--navy-deep); color: #fff; border-radius: calc(var(--r-lg) - 8px);
-  padding: 20px 16px; text-align: center; box-shadow: var(--sh);
-}
-.upgrade-modal__price small { display: block; color: rgba(255,255,255,.68); font-weight: 600; margin-bottom: 6px; }
-.upgrade-modal__price .now {
-  display: block; font-family: var(--font-display); color: var(--gold);
-  font-weight: 800; font-size: clamp(48px, 7vw, 68px); line-height: .98;
-}
-.upgrade-modal__price .note { display: block; color: rgba(255,255,255,.74); font-size: 13px; margin-top: 8px; }
-.upgrade-modal__actions { display: grid; gap: 10px; margin-top: 16px; }
-.upgrade-modal__accept { width: 100%; justify-content: center; text-align: center; font-size: clamp(15px, 2.4vw, 18px); }
-.upgrade-modal__decline {
-  appearance: none; border: 1.5px solid rgba(18,55,71,.18); background: var(--cream);
-  color: var(--muted); font-family: var(--font-display); font-weight: 600;
-  border-radius: var(--pill); padding: 14px 18px; cursor: pointer;
-}
-.upgrade-modal__decline { text-align: center; text-decoration: none; }
-.upgrade-modal__decline:hover { color: var(--navy); border-color: rgba(18,55,71,.32); }
-.upgrade-modal__close {
-  position: absolute; top: 16px; right: 16px; z-index: 2; width: 36px; height: 36px;
-  border: none; border-radius: 50%; background: rgba(18,55,71,.08); color: var(--navy);
-  font-size: 22px; line-height: 1; cursor: pointer;
-}
-.upgrade-modal__close:hover { background: rgba(18,55,71,.14); }
-@media (max-width: 620px) {
-  .upgrade-modal { align-items: start; padding: 14px; }
-  .upgrade-modal__notice { display: none; }
-  .upgrade-modal__card { border-radius: var(--r); padding: 24px 18px 20px; }
-  .upgrade-modal__top { align-items: flex-start; flex-direction: column; padding-right: 34px; }
-  .upgrade-modal__grid { grid-template-columns: 1fr; }
-  .upgrade-modal__price { padding: 20px 16px; }
-  .upgrade-modal__price .now { font-size: clamp(48px, 18vw, 68px); }
-  .upgrade-modal__decline { border-radius: var(--r-sm); }
-}
+
 .testi-shell { max-width: 760px; margin: 0 auto; }
 .testi-viewport { overflow: hidden; border-radius: var(--r-lg); }
 .testi-track { display: flex; transition: transform .5s cubic-bezier(.5,0,.2,1); }
@@ -688,9 +588,8 @@ body.upgrade-open { overflow: hidden; }
 .lightbox[hidden],.checkout-notice[hidden]{display:none!important}.lightbox,.checkout-notice{position:fixed;inset:0;z-index:200;background:#081c2eea;display:flex;align-items:center;justify-content:center;padding:20px}
 .lightbox-panel{position:relative;max-width:900px;width:100%;height:94dvh;overflow:auto;overscroll-behavior:contain;border-radius:12px;background:#f6f4ee;padding:42px 12px 12px}.lightbox-panel img{width:100%;height:auto}.modal-close{position:sticky;top:0;float:right;margin-top:-32px;width:34px;height:34px;border:0;border-radius:50%;background:#fff;color:#152c49;font-size:24px;cursor:pointer;z-index:2;box-shadow:0 2px 12px #0003}
 .checkout-panel{max-width:430px;padding:30px;background:#fff;border-radius:22px}.checkout-panel h2{font-size:25px;margin-bottom:12px}.checkout-panel p{font-size:16px;margin-bottom:20px}
-.upgrade-modal__mockup{display:block;width:100%;max-width:260px;max-height:180px;height:auto;object-fit:contain;margin:0 auto 16px;padding:8px;background:#fff;border-radius:12px}
-body.modal-open{overflow:hidden}.upgrade-modal{overflow-y:auto;overscroll-behavior:contain}.upgrade-modal__dialog{max-height:94dvh;overflow:auto}.upgrade-modal__card{overflow:visible}
-@media(max-width:380px){.upgrade-modal{padding:10px}.upgrade-modal__card{padding:18px}.upgrade-modal__notice{padding:14px}.upgrade-modal__top{align-items:flex-start;flex-direction:column}.upgrade-modal__price .now{font-size:43px}.plan{padding:25px 20px}.price-now{font-size:46px}}
+body.modal-open{overflow:hidden}
+@media(max-width:380px){.plan{padding:25px 20px}.price-now{font-size:46px}}
 .marquee,.testi-viewport{overflow:hidden!important;scrollbar-width:none;-ms-overflow-style:none}
 .marquee::-webkit-scrollbar,.testi-viewport::-webkit-scrollbar{display:none;width:0;height:0}
 .marquee-track{animation:marquee-right 34s linear infinite!important;animation-play-state:running!important}
@@ -698,10 +597,10 @@ body.modal-open{overflow:hidden}.upgrade-modal{overflow-y:auto;overscroll-behavi
 .testi-track{animation:testimonials-continuous 48s linear infinite!important;animation-play-state:running!important}
 @media(prefers-reduced-motion:reduce){.marquee-track,.photo-marquee .marquee-track,.testi-track{animation-duration:120s!important;animation-iteration-count:infinite!important;animation-play-state:running!important}}
 :root{--cream:#F2F5F7;--cream-2:#E2EBF0;--cream-3:#087FAD;--navy:#092C45;--navy-deep:#041D30;--ink:#243C4D;--teal:#087FAD;--teal-deep:#075B7D;--green:#087FAD;--green-deep:#06536F;--green-glow:rgba(8,127,173,.30);--gold:#E9A13A;--gold-deep:#895411}
-.hero h1{max-width:26ch}.hero-art,.receive-card .art,.plan .art{min-width:0;mix-blend-mode:normal}.hero-art img,.receive-card .art img,.plan .art img{width:100%;height:auto;object-fit:contain}.plan .art img{max-height:270px}.hero-art{max-width:600px}.upgrade-modal__mockup{max-height:230px;max-width:100%}.sample-link{line-height:1.4}.sample-label{min-height:54px}.gal-card .ph{aspect-ratio:1055/1491}.photo-card .ph{aspect-ratio:3/4}.marquee-track{gap:30px}.testi-track{pointer-events:auto}
-.hero-grid,.hero-copy,.plans-grid,.plan,.receive-card,.recv-copy,.upgrade-modal__grid>*{min-width:0}.upgrade-modal__dialog{scrollbar-width:thin;scroll-padding:20px}.upgrade-modal__close{position:sticky;top:4px;float:right;margin:-6px -6px -36px 0}.upgrade-modal__top{clear:none}.upgrade-modal__grid{grid-template-columns:1fr .85fr}.upgrade-modal__eyebrow{max-width:30ch}.btn{overflow-wrap:break-word}.checkout-panel .btn{width:100%}
-@media(max-width:620px){.hero-art{max-width:360px}.upgrade-modal__grid{grid-template-columns:1fr}.upgrade-modal__price{max-width:100%}.upgrade-modal__mockup{max-width:320px;max-height:230px}.plan{padding:32px 22px}.btn{padding:20px 24px}.hero h1{max-width:21ch}.upgrade-modal__best{font-size:10px}.upgrade-modal__eyebrow{font-size:10px}}
-@media(max-width:350px){.wrap{padding:0 14px}.hero h1{font-size:28px}.plan{padding:28px 18px}.upgrade-modal__card{padding:20px 14px}.upgrade-modal__actions .btn{font-size:14px;padding:17px 14px}}
+.hero h1{max-width:26ch}.hero-art,.receive-card .art,.plan .art{min-width:0;mix-blend-mode:normal}.hero-art img,.receive-card .art img,.plan .art img{width:100%;height:auto;object-fit:contain}.plan .art img{max-height:270px}.hero-art{max-width:600px}.sample-link{line-height:1.4}.sample-label{min-height:54px}.gal-card .ph{aspect-ratio:1055/1491}.photo-card .ph{aspect-ratio:3/4}.marquee-track{gap:30px}.testi-track{pointer-events:auto}
+.hero-grid,.hero-copy,.plans-grid,.plan,.receive-card,.recv-copy{min-width:0}.btn{overflow-wrap:break-word}.checkout-panel .btn{width:100%}
+@media(max-width:620px){.hero-art{max-width:360px}.plan{padding:32px 22px}.btn{padding:20px 24px}.hero h1{max-width:21ch}}
+@media(max-width:350px){.wrap{padding:0 14px}.hero h1{font-size:28px}.plan{padding:28px 18px}}
 </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -1012,7 +911,7 @@ fbq('track', 'PageView');
         <p class="price-now">R$17,90</p>
         <p class="price-inst">Meios de pagamento disponíveis no checkout</p>
         <span class="save-chip">Sem mensalidade</span>
-        <a href="https://lastlink.com/p/CDA58E53E/checkout-payment/" class="btn btn--ghost btn--block plano_basico" data-upgrade-trigger aria-haspopup="dialog" aria-controls="upgrade-modal">QUERO O PACOTE BÁSICO</a>
+        <a href="https://lastlink.com/p/CDA58E53E/checkout-payment/" class="btn btn--ghost btn--block plano_basico" data-checkout="basico">QUERO O PACOTE BÁSICO</a>
         <div class="checkout-methods"><img src="https://clp-ladder-imagens-vr.lightpine512.chatgpt.site/assets/pagamentos.png" alt="Lastlink, Pix, Visa e Mastercard" width="469" height="79" loading="eager" decoding="async" data-asset="pagamentos"></div>
         <div class="social-arrow">
           <span class="pill"><b>+3 bônus</b><span class="copy">no Pacote Completo</span></span>
@@ -1239,64 +1138,24 @@ fbq('track', 'PageView');
 
 <!-- 16 · SEÇÃO ADAPTADA DO MODELO -->
 <footer class="footer"><div class="wrap"><p class="cr">Mapas Visuais de CLP e Ladder · © 2026</p><p>Material educacional independente. Marcas e nomes de plataformas pertencem aos respectivos titulares; não há vínculo ou endosso de fabricantes.</p><p>Exemplos para estudo e simulação. Não substituem manuais, projeto elétrico ou procedimentos de segurança. As cenas de uso foram geradas por IA; os mockups representam arquivos digitais.</p><p>Consulte as condições de entrega, pagamento e reembolso na finalização. Arquivos para uso pessoal; redistribuição e revenda dependem de autorização.</p><p>Este site não é afiliado ao Facebook, Instagram ou Google.</p></div></footer>
-<div class="upgrade-modal" id="upgrade-modal" data-upgrade-modal hidden role="dialog" aria-modal="true" aria-labelledby="upgrade-title">
-  <div class="upgrade-modal__dialog" tabindex="-1">
-    <div class="upgrade-modal__notice">
-      <strong>Conheça a opção com os três bônus</strong>
-      <span>Escolha o Pacote Completo e desbloqueie todos os bônus por <b>R$27,90</b>.</span>
-    </div>
-    <div class="upgrade-modal__card">
-      <button class="upgrade-modal__close" type="button" data-close aria-label="Fechar oferta">×</button>
-      <div class="upgrade-modal__top">
-        <span class="upgrade-modal__eyebrow">Mapas Visuais de CLP e Ladder</span>
-        <span class="upgrade-modal__best">Atlas + 3 bônus</span>
-      </div>
-      <div class="upgrade-modal__grid">
-        <div class="upgrade-modal__content">
-          <h3 id="upgrade-title">Leve o Pacote Completo por R$27,90.</h3>
-          <p class="upgrade-modal__lead">Leve o atlas com mais de 255 páginas e os três bônus para consultar instruções, praticar a lógica e organizar seus testes no simulador.</p>
-          <ul class="upgrade-modal__list">
-            <li><span class="check">✓</span><span>Guia de Instruções Essenciais</span></li>
-            <li><span class="check">✓</span><span>Exercícios Ladder Comentados</span></li>
-            <li><span class="check">✓</span><span>Roteiro de Simulação e Análise</span></li>
-          </ul>
-          <div class="upgrade-modal__plus">Só R$10,00 a mais que o Pacote Básico.</div>
-        </div>
-        <div class="upgrade-modal__price">
-          <img class="upgrade-modal__mockup" src="https://clp-ladder-imagens-vr.lightpine512.chatgpt.site/assets/completo-560.webp" alt="Pacote completo: atlas e três bônus" width="560" height="373" loading="eager" decoding="async" data-asset="completo" srcset="https://clp-ladder-imagens-vr.lightpine512.chatgpt.site/assets/completo-560.webp 560w, https://clp-ladder-imagens-vr.lightpine512.chatgpt.site/assets/completo-1100.webp 1100w" sizes="(max-width: 620px) 260px, 230px">
-          <small>Completo na página: R$36,90</small>
-          <span class="now">R$27,90</span>
-          <span class="note">Arquivos digitais · Uso pessoal</span>
-        </div>
-      </div>
-      <div class="upgrade-modal__actions">
-        <a class="btn btn--block btn-pulse upgrade-modal__accept plano_upgrade" href="https://lastlink.com/p/CD498F435/checkout-payment/" data-checkout="upgrade">SIM, QUERO O PACOTE COMPLETO POR R$27,90</a>
-        <a class="upgrade-modal__decline" href="https://lastlink.com/p/CDA58E53E/checkout-payment/" data-checkout="basico">Não, quero ficar apenas com o Pacote Básico de R$17,90</a>
-      </div>
-      <div class="checkout-methods"><img src="https://clp-ladder-imagens-vr.lightpine512.chatgpt.site/assets/pagamentos.png" alt="Lastlink, Pix, Visa e Mastercard" width="469" height="79" loading="eager" decoding="async" data-asset="pagamentos"></div>
-    </div>
-  </div>
-</div>
-
 <div class="lightbox" id="sample-modal" role="dialog" aria-modal="true" aria-labelledby="sample-title" hidden><div class="lightbox-panel"><button class="modal-close" type="button" data-close aria-label="Fechar amostra">×</button><h2 id="sample-title" style="font-size:18px;margin:0 0 14px;text-align:center"></h2><img id="sample-full" alt=""></div></div>
 <div class="checkout-notice" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" hidden><div class="checkout-panel"><h2 id="checkout-title">Não foi possível abrir o checkout</h2><p>Volte à página e tente abrir novamente o pacote escolhido.</p><button class="btn" type="button" data-close>Voltar para a página</button></div></div>
-<noscript><p class="no-js-note">Ative o JavaScript para ampliar as amostras e ver a oferta complementar. Os botões dos pacotes levam à finalização da compra.</p></noscript>
+<noscript><p class="no-js-note">Ative o JavaScript para ampliar as amostras. Os botões dos pacotes levam à finalização da compra.</p></noscript>
 <script>
 // ===== LINKS DE COMPRA: substituir apenas os destinos abaixo =====
-const CHECKOUT_LINKS = {"basico": "https://lastlink.com/p/CDA58E53E/checkout-payment/", "completo": "https://lastlink.com/p/C1B91BD49/checkout-payment/", "upgrade": "https://lastlink.com/p/CD498F435/checkout-payment/"};
+const CHECKOUT_LINKS = {"basico": "https://lastlink.com/p/CDA58E53E/checkout-payment/", "completo": "https://lastlink.com/p/C1B91BD49/checkout-payment/"};
 // Política comercial: preencher apenas depois de confirmar as condições.
 const COMMERCIAL = { garantiaTitulo: "Compra com informações claras", garantiaTexto: "Consulte no checkout as condições de pagamento, acesso e reembolso antes de concluir. O material é digital e não inclui envio de livros físicos." };
 (()=>{
 const q=s=>document.querySelector(s);let lastFocus=null;
 function open(id){const el=q(id);if(!el)return;lastFocus=document.activeElement;el.hidden=false;document.body.classList.add('modal-open');(el.querySelector('button,a[href],[tabindex]')||el).focus();}
-function close(el){el.hidden=true;if(!document.querySelector('.lightbox:not([hidden]),.checkout-notice:not([hidden]),.upgrade-modal:not([hidden])'))document.body.classList.remove('modal-open');if(lastFocus)lastFocus.focus();}
+function close(el){el.hidden=true;if(!document.querySelector('.lightbox:not([hidden]),.checkout-notice:not([hidden])'))document.body.classList.remove('modal-open');if(lastFocus)lastFocus.focus();}
 document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>close(b.closest('[role=dialog]'))));
 document.querySelectorAll('[role=dialog]').forEach(el=>el.addEventListener('click',e=>{if(e.target===el)close(el);}));
 document.addEventListener('keydown',e=>{const el=document.querySelector('[role=dialog]:not([hidden])');if(!el)return;if(e.key==='Escape'){e.preventDefault();close(el);}if(e.key==='Tab'){const controls=[...el.querySelectorAll('a[href],button:not([disabled]),[tabindex="0"]')];const first=controls[0],last=controls.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
 document.querySelectorAll('.faq-q').forEach((b,i)=>{const item=b.closest('.faq-item'),a=item.querySelector('.faq-a');a.id='resposta-'+i;b.setAttribute('aria-controls',a.id);b.setAttribute('aria-expanded','false');b.addEventListener('click',()=>{const was=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight='';o.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!was){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';b.setAttribute('aria-expanded','true')}})});
 document.querySelectorAll('[data-sample]').forEach(b=>b.addEventListener('click',()=>{const im=q('#sample-full');im.src=b.querySelector('img').dataset.fullSrc||b.querySelector('img').currentSrc||b.querySelector('img').src;im.alt=b.querySelector('img').alt;q('#sample-title').textContent=b.dataset.title;open('#sample-modal')}));
-document.querySelectorAll('[data-upgrade-trigger]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();open('#upgrade-modal')}));
-document.querySelectorAll('[data-checkout]').forEach(b=>{const key=b.dataset.checkout;b.href=CHECKOUT_LINKS[key]||'#checkout';b.addEventListener('click',e=>{if(!CHECKOUT_LINKS[key]){e.preventDefault();const up=q('#upgrade-modal');if(up&&!up.hidden)close(up);open('#checkout-modal');}else if(!/^https:\/\//.test(CHECKOUT_LINKS[key])){e.preventDefault();open('#checkout-modal');}})});
+document.querySelectorAll('[data-checkout]').forEach(b=>{const url=CHECKOUT_LINKS[b.dataset.checkout];if(url)b.href=url;});
 const gt=q('[data-guarantee-title]'),gb=q('[data-guarantee-body]');if(gt)gt.textContent=COMMERCIAL.garantiaTitulo;if(gb)gb.textContent=COMMERCIAL.garantiaTexto;
 })();
 
